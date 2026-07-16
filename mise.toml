@@ -1,3 +1,5 @@
 [tools]
-go = "latest"
-golangci-lint = "latest"
+air = "1.65"
+go = "1.26"
+golangci-lint = "2.12"
+just = "1.56"
