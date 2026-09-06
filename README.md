@@ -1,3 +1,3 @@
-# holonet
+# Holonet
 
 a websocket server
