@@ -1,4 +1,7 @@
 [tools]
-air = "1.65"
-go = "1.26"
-golangci-lint = "2.12"
+air = "1.67.4"
+go = "1.27.1"
+golangci-lint = "2.13.2"
+
+[settings]
+lockfile = true

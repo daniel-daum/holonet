@@ -33,3 +33,6 @@ go.work.sum
 
 # temp
 tmp
+
+# project binary
+holonet
