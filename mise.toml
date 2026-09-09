@@ -1,7 +1,40 @@
+# ===== TOOLS =====
 [tools]
 air = "1.67.4"
 go = "1.27.1"
+"go:golang.org/x/vuln/cmd/govulncheck" = "1.7.0"
 golangci-lint = "2.13.2"
 
+# ===== SETTINGS =====
 [settings]
 lockfile = true
+
+# ===== ENV =====
+[env]
+HOST="0.0.0.0"
+PORT=7432
+ENV="development"
+
+
+# ===== TASKS =====
+# start development server with air live reloading
+[tasks.dev]
+run = "air"
+
+[tasks.start]
+run = "go run ./cmd/holonet/"
+
+[tasks.build]
+run = "go build -o bin/holonet ./cmd/holonet/"
+
+[tasks.lint]
+run = "golangci-lint run ./..."
+
+[tasks.test]
+run = "go test ./..."
+
+[tasks.vuln]
+run = "govulncheck ./..."
+
+[tasks.check]
+depends = ["lint", "test", "vuln"]
