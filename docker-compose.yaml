@@ -1,0 +1,16 @@
+name: holonet
+
+services:
+  holonet:
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: holonet:latest
+    container_name: holonet
+    environment:
+      HOST: "0.0.0.0"
+      PORT: "7432"
+      ENV: "production"
+    ports:
+      - "7432:7432"
+    restart: unless-stopped

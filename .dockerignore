@@ -1,0 +1,41 @@
+# Git
+.git
+.gitattributes
+
+# Godot client (not needed in backend container)
+clients/
+
+# Docker
+docker-compose.yaml
+.dockerignore
+Dockerfile
+dockerfile
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Documentation
+*.md
+LICENSE
+docs/
+
+# Build output
+bin/
+out/
+
+# Environment (uncomment if you use .env files)
+# .env
+# .env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# development
+.air.toml
+.gitea
+.gitignore
+mise.lock
+mise.toml
