@@ -4,7 +4,7 @@ Open-source multiplayer game backend in Go. A control plane (HTTP/REST) + data p
 
 **v0.1.0 — Tick world + godot client connected** (target: 2026-10-31)
 
-- [ ] Project Scaffolded
+- [x] Project Scaffolded
 - [ ] Env config with validation
 - [ ] Structured logging (tint + slog)
 - [ ] Control plane (register/login endpoints)

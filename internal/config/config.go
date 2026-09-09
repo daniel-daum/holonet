@@ -11,30 +11,21 @@ type Settings struct {
 	ENV  string
 }
 
+func getOrDefault(envVar string, defVal string) string {
+	variable, exists := os.LookupEnv(envVar)
+
+	if !exists {
+		fmt.Printf("%s was not provided, defaulting to %s", variable, defVal)
+		variable = defVal
+	}
+	return variable
+}
+
 func LoadSettings() Settings {
-	// HOST
-	host, exists := os.LookupEnv("HOST")
 
-	if !exists {
-		fmt.Println("Host was not provided, defaulting to 0.0.0.0")
-		host = "0.0.0.0"
-	}
-
-	// PORT
-	port, exists := os.LookupEnv("PORT")
-
-	if !exists {
-		fmt.Println("PORT was not provided, defaulting to 7432")
-		port = "7432"
-	}
-
-	// ENV
-	env, exists := os.LookupEnv("ENV")
-
-	if !exists {
-		fmt.Println("ENV was not provided, defaulting to development")
-		env = "development"
-	}
+	host := getOrDefault("HOST", "0.0.0.0")
+	port := getOrDefault("PORT", "7432")
+	env := getOrDefault("ENV", "development")
 
 	return Settings{HOST: host, PORT: port, ENV: env}
 }

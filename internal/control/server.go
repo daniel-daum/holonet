@@ -1,6 +1,7 @@
 package control
 
 import (
+	"fmt"
 	"net/http"
 
 	"git.danieldaum.net/daniel-daum/holonet/internal/config"
@@ -9,8 +10,13 @@ import (
 // setup control pane http server
 // pull and provide configs
 func holonet() *http.Server {
-	config.GetConfig()
+	settings := config.LoadSettings()
 
+	fmt.Printf("HOST IS SET: %s\n", settings.HOST)
+	fmt.Printf("PORT IS SET: %s\n", settings.PORT)
+	fmt.Printf("ENV IS SET: %s\n", settings.ENV)
+
+	fmt.Println("STARTING SERVER")
 	s := &http.Server{}
 
 	return s
